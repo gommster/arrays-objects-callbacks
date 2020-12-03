@@ -18,9 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
-
-
+function first (arr) {
+  return arr[0];
+}
 ////////// PROBLEM 2 //////////
 
 // Do not edit the code below.
@@ -33,9 +33,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
-
-
+function last (arr) {
+  return arr[2];
+}
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
@@ -48,9 +48,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
-
-
+function looper (family) {
+  for (let i = 0; i < family.length; i++) {
+    alert(family[i]);
+  }
+}
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
@@ -63,7 +65,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper (letters) {
+  for (let i = letters.length-1; i >= 0; i--) {
+    alert(letters[i]);
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -71,27 +77,23 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 // Do not edit the code below.
 var nums = [1,2,3,6,22,98,45,23,22,12];
 // Do not edit the code above.
-
 /*
   Write a function named evenFinder that is given nums as it's only argument.
   Return an array that contains the even numbers from the nums array.
 */
 
 //Code Here
-
-
-
-
-
-
+function evenFinder (nums) {
+  let evens = [];
+  for ( let i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 == 0)
+      evens.push(nums[i]);
+  }
+  return evens;
+}
 
 /////////////////////// EXTRA PRACTICE PROBLEMS BELOW ////////////////////
 ////////// MOVE ONTO NEXT SECTION BEFORE WORKING ON THESE ////////////////
-
-
-
-
-
 
 
 ////////// PROBLEM 6 //////////
@@ -107,7 +109,17 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
-
+function divider(numbersArray) {
+  let evens = [];
+  let odds = [];
+  for ( let i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 == 0)
+      evens.push(numbersArray[i]);
+    else 
+      odds.push(numbersArray[i]);
+  }
+  return [evens, odds];
+}
 
 
 ////////// PROBLEM 7 //////////
@@ -129,8 +141,14 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
-
+function finder (arra) {
+  let randomNumber = getRandomArbitrary();
+  for (let i = 0; i < arra.length; i++) {
+    if (arra[i] == randomNumber)
+      return true;
+  }
+  return false;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -158,9 +176,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem (myGroceryList, item) {
+  if (myGroceryList && item)
+    for(let i = 0; i < myGroceryList.length; i++) {
+      if (myGroceryList[i] == item)
+        myGroceryList.splice(i,1);
+    }
+  else
+    myGroceryList = [];
+  return myGroceryList;
+}
 
 
-
+function addItem (myGroceryList, item) {
+  if (myGroceryList && item)
+    myGroceryList.push(item);
+  else
+    myGroceryList = [];
+  return myGroceryList;
+}
 ////////// PROBLEM 9 //////////
 
 /*
@@ -168,7 +202,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker() {
+  let arra = [];
+  for(i = 0; i < 215; i++) {
+    arra.push(i+1);
+  }
+  return arra;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -184,7 +224,16 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen (numbers) {
+  let nums = [];
+  for (i=0; i<numbers.length;i++) {
+    if(typeof numbers[i] == 'string')
+      nums.push(Number(numbers[i]) + 10);
+    else
+      nums.push(numbers[i]+10);
+  }
+  return nums;
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -209,7 +258,11 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer (arr1, arr2) {
+  if(arr1.length > arr2.length)
+    return arr1;
+  return arr2;
+}
 
 
 /*
@@ -221,7 +274,16 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both (arr1, arr2) {
+  let bothArr = [];
+  for(i=0; i<arr1.length;i++) {
+    for(j=0; j<arr2.length; j++) {
+      if(arr1[i] == arr2[j])
+        bothArr.push(arr1[i]);
+    }
+  }
+  return bothArr;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -262,6 +324,11 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.push(joe);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
+console.log(devMountainEmployees.length);
 
 
 
@@ -272,6 +339,7 @@ var colt = {
 
 //Code Here
 
+devMountainEmployees.splice(1,1);
 
 
 ////////// PROBLEM 13 //////////
@@ -283,7 +351,7 @@ var colt = {
 */
 
 //Code Here
-
+let users = [];
 
 
 /*
@@ -304,7 +372,19 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
-
+users.push(user1);
+users.push({
+  name: 'Mark McllIver',
+  email: 'mark.mclliver@devmounta.in',
+  password: 'hunttter2',
+  username: 'ihazcooode'
+});
+users.push({
+  name: 'Mark MclIver',
+  email: 'mark.mcliver@devmounta.in',
+  password: 'huntter2',
+  username: 'ihazcoode'
+});
 
 
 /*
@@ -316,9 +396,15 @@ var user1 = {
   Loop through your array of objects until you find Mark's account (use his email, mark.mciver@devmounta.in, to find him).
   Once you find the array index he's located in, delete him from the array.
 */
-
+users.length
 //Code Here
-
+for(i=0;i<users.length;i++)
+{
+  if (users[i].email == 'mark.mciver@devmounta.in') {
+    users[i] = users[users.length-1];
+    users.pop();
+  }
+}
 
 
 /*

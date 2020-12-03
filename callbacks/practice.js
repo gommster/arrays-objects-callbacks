@@ -28,7 +28,9 @@
 */
 
 // Code Here 
-
+function first (arra, callbac){
+  callbac(arra[0]);
+}
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 
@@ -48,7 +50,9 @@ first(names, function(firstName){
 */
 
 //Code Here
-
+function last (arr, callback2) {
+  callback2(arr[arr.length-1]);
+}
 // Do not edit the code below.
 last(names, function(lastName){
   console.log('The last name in names is ' + lastName);
@@ -66,7 +70,9 @@ last(names, function(lastName){
 */
 
 //Code Here
-
+function multiply(number1, number2, callback3) {
+  callback3(number1*number2);
+}
 // Do not edit the code below.
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -85,7 +91,13 @@ multiply(4, 3, function(answer){
 */
 
 //Code Here 
-
+function contains(array3, name, callback4) {
+  for(i=0; i<array3.length;i++) {
+    if(array3[i] == name) 
+      callback4(true);
+  }
+  callback4(false);
+}
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
   if(result === true){
@@ -106,7 +118,17 @@ contains(names, 'Colt', function(result){
 */
 
 //Code Here
-
+function uniq(array5, callback5) {
+  for(i=0;i<array5.length-1;i++) {
+    for(j=i+1;j<array5.length;j++) {
+      if(array5[i] == array5[j]) {
+        array5[j] = array5[array5.length-1];
+        array5.pop();
+      }
+    }
+  }
+  callback5(array5);
+}
 // Do not edit the code below.
 uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
@@ -123,7 +145,11 @@ uniq(names, function(uniqArr){
 */
 
 //Code Here 
-
+function each(array6, callback6) {
+  for(i=0;i<array6.length;i++) {
+    callback6(array6[i], i);
+  }
+}
 // Do not edit the code below.
 each(names, function(item, indice){
   console.log('The item in the ' + indice + ' position is ' + item)
@@ -140,7 +166,12 @@ each(names, function(item, indice){
 */
 
 // Code here
-
+function getUserById(array7, id, callback7) {
+  for(i=0;i<array7.length;i++) {
+    if(array7[i].id == id)
+      callback7(array7[i]);
+  }
+}
 // Do not edit the code below.
 var users = [
   {
